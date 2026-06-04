@@ -42,3 +42,8 @@ After Actions passes, publish release:
 Tag: v1.2.0
 Title: AXZ ReceiptCI v1.2.0 — benchmark and stress-test suite
 ```
+
+
+## v1.2.1 patch note
+
+After uploading this patch, ensure `.github/workflows/verify.yml` and `.github/workflows/receipt_engine.yml` are updated from their visible backup copies if GitHub does not upload hidden workflow files.

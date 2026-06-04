@@ -268,3 +268,22 @@ Added in v1.2:
 
 Truth boundary: benchmark timings are hardware-sensitive. The certified behavior is deterministic hashing and positive drift detection under the stated benchmark rules, not a universal speed guarantee.
 
+
+## v1.2.1 PyPI packaging prep
+
+AXZ ReceiptCI v1.2.1 adds package-distribution preparation files. This does **not** claim that AXZ ReceiptCI is live on production PyPI yet. It verifies package metadata, source layout, and CLI entry-point wiring before any production upload.
+
+Run the packaging wiring check:
+
+```bash
+python scripts/verify_package_wiring.py
+python -m pytest -q
+```
+
+Publishing guidance lives in:
+
+```text
+docs/PUBLISHING.md
+```
+
+Truth boundary: production PyPI status should only be claimed after the real PyPI project page exists and a clean `pip install axz-receiptci==1.2.1` succeeds.
