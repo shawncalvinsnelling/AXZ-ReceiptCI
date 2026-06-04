@@ -1,55 +1,44 @@
-# Upload First
+# Upload AXZ ReceiptCI v1.2.0 Patch
 
-Create GitHub repository:
+Use this patch to upgrade the existing `AXZ-ReceiptCI` repository from v1.1.0 to v1.2.0.
 
-```text
-AXZ-ReceiptCI
-```
+## Upload steps
 
-Description:
+1. Open the existing GitHub repository: `AXZ-ReceiptCI`.
+2. Upload every file in this patch.
+3. Commit directly to `main`.
 
-```text
-Deterministic CI receipt engine that verifies tests, hashes artifacts, and emits reproducible JSON release certificates.
-```
-
-Create with:
+Commit message:
 
 ```text
-Add README: Off
-Add .gitignore: Off
-License: None / Off
+Add v1.2 benchmark suite
 ```
 
-Upload all files from this folder.
+## Critical files
 
-Make sure these hidden files are present after upload:
+Make sure these files exist after upload:
 
 ```text
 .github/workflows/verify.yml
-.gitignore
+.github/workflows/receipt_engine.yml
+tests/benchmark_suite.py
+tests/test_benchmark_suite.py
+docs/BENCHMARKS.md
+docs/RELEASE_NOTES_v1.2.0.md
 ```
 
-If GitHub misses hidden files, use:
+If GitHub misses hidden workflow files, manually create them from the visible backup files:
 
 ```text
 VISIBLE_GITHUB_ACTIONS_verify.yml
-VISIBLE_GITIGNORE.txt
+VISIBLE_GITHUB_ACTIONS_receipt_engine.yml
 ```
 
-## v1.1.0 patch upload notes
+## Release
 
-For the v1.1.0 provenance pack, ensure these files are present after upload:
+After Actions passes, publish release:
 
 ```text
-.github/workflows/receipt_engine.yml
-ROADMAP.md
-CONTRIBUTING.md
-SECURITY.md
-docs/PROVENANCE_WORKFLOW_PACK.md
-docs/RECEIPT_SCHEMA.md
-docs/RELEASE_NOTES_v1.1.0.md
-examples/use_receipt_engine.yml
-examples/sample_axz_receipt.json
+Tag: v1.2.0
+Title: AXZ ReceiptCI v1.2.0 — benchmark and stress-test suite
 ```
-
-If GitHub's browser uploader does not preserve hidden workflow files, create `.github/workflows/receipt_engine.yml` manually using `VISIBLE_GITHUB_ACTIONS_receipt_engine.yml`.

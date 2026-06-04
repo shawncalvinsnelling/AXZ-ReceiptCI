@@ -1,0 +1,9 @@
+{
+  "benchmark_script": "tests/benchmark_suite.py",
+  "default_subdirectories": 10,
+  "default_total_files": 10000,
+  "release": "1.2.0",
+  "schema_version": "axz.receiptci.benchmark.summary.v1",
+  "status": "BENCHMARK_PASS_REQUIRED",
+  "truth_boundary": "Timing is hardware-sensitive; deterministic drift detection is the invariant."
+}

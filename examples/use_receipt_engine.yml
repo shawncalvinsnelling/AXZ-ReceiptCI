@@ -6,7 +6,7 @@ on:
 
 jobs:
   run_receipt_engine:
-    uses: shawncalvinsnelling/AXZ-ReceiptCI/.github/workflows/receipt_engine.yml@v1.1.0
+    uses: shawncalvinsnelling/AXZ-ReceiptCI/.github/workflows/receipt_engine.yml@v1.2.0
     with:
       project_name: ${{ github.event.repository.name }}
       root_dir: "."

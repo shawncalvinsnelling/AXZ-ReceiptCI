@@ -31,6 +31,9 @@ jobs:
       - name: Run tests
         run: python -m pytest -q
 
+      - name: Run 10,000-file benchmark suite
+        run: python tests/benchmark_suite.py --files 10000 --subdirs 10 --out certificates/benchmark_report.json
+
       - name: Generate receipt
         run: axz-receiptci verify --project-name AXZ-ReceiptCI --test-cmd "python -m pytest -q" --out certificates
 

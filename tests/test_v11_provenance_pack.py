@@ -30,4 +30,4 @@ def test_v11_docs_exist():
 def test_readme_contains_three_minute_integration():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "Implement AXZ-ReceiptCI in 3 minutes" in readme
-    assert "receipt_engine.yml@v1.1.0" in readme
+    assert "receipt_engine.yml@v1.2.0" in readme

@@ -1,0 +1,18 @@
+{
+  "benchmark_version": "1.2.0",
+  "drift_detected": true,
+  "drift_file": "module_zone_5/source_file_05055.py",
+  "drift_scan_seconds": 4.944542,
+  "file_count": 10000,
+  "generated_at_utc": "2026-06-04T18:35:56+00:00",
+  "generation_seconds": 4.047779,
+  "initial_source_tree_hash": "06c3a55ef17e98e398c3311fdb4f6af68f288f2a690f9fb3e0fa00995585cd52",
+  "mutated_source_tree_hash": "2d281f2e8919b666ab429cfbcd77564d0f5f2b3fd9f4040f9853e6deaf90900e",
+  "scan_seconds": 4.465021,
+  "schema_version": "axz.receiptci.benchmark.v1",
+  "status": "BENCHMARK_PASS",
+  "subdirectories": 10,
+  "total_bytes_after_drift": 1034482,
+  "total_bytes_before_drift": 1034450,
+  "total_files": 10000
+}

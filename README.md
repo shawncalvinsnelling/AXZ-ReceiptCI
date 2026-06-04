@@ -198,7 +198,7 @@ AXZ ReceiptCI is an open-source deterministic CI receipt engine that verifies te
 
 ## Implement AXZ-ReceiptCI in 3 minutes
 
-After `v1.1.0`, other repositories can call the reusable provenance workflow directly.
+After `v1.2.0`, other repositories can call the reusable provenance workflow directly.
 Create `.github/workflows/verify.yml` in the target repository:
 
 ```yaml
@@ -210,7 +210,7 @@ on:
 
 jobs:
   run_receipt_engine:
-    uses: shawncalvinsnelling/AXZ-ReceiptCI/.github/workflows/receipt_engine.yml@v1.1.0
+    uses: shawncalvinsnelling/AXZ-ReceiptCI/.github/workflows/receipt_engine.yml@v1.2.0
     with:
       project_name: ${{ github.event.repository.name }}
       root_dir: "."
@@ -243,4 +243,28 @@ AXZ ReceiptCI v1.1 adds a reusable workflow layer and documentation pack:
 - `examples/sample_axz_receipt.json` sample receipt payload
 
 State-of-the-art posture remains truth bounded: AXZ ReceiptCI produces deterministic build receipts and provenance-style records. It does not replace SLSA, Sigstore, GitHub Artifact Attestations, Bazel, Nix, or enterprise CI systems.
+
+## v1.2 benchmark suite
+
+AXZ ReceiptCI v1.2 adds a benchmark and stress-test suite for large deterministic source-tree scans.
+
+Run a 10,000-file benchmark locally:
+
+```bash
+python tests/benchmark_suite.py --files 10000 --subdirs 10 --out certificates/benchmark_report.json
+```
+
+The benchmark creates a temporary simulated repository, hashes it through the real AXZ ReceiptCI canonical scan path, mutates one file, re-hashes the tree, and verifies that the source-tree hash changes.
+
+Added in v1.2:
+
+- `tests/benchmark_suite.py`
+- `tests/test_benchmark_suite.py`
+- `docs/BENCHMARKS.md`
+- GitHub Actions benchmark execution
+- 10,000-file simulated repository stress test
+- one-file drift mutation check
+- structured benchmark JSON output
+
+Truth boundary: benchmark timings are hardware-sensitive. The certified behavior is deterministic hashing and positive drift detection under the stated benchmark rules, not a universal speed guarantee.
 

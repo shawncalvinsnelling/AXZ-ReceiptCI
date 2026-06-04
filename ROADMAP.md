@@ -64,3 +64,10 @@ Features:
 ## Forbidden roadmap claims
 
 AXZ ReceiptCI does not claim to solve all software supply-chain security, replace existing security frameworks, prove semantic correctness of arbitrary programs, or make AI-generated code automatically trustworthy.
+
+
+## Phase 2B — Benchmark and Stress-Test Suite
+
+**Status:** Complete in v1.2.0.
+
+AXZ ReceiptCI v1.2.0 adds deterministic large-repository benchmark coverage, including a 10,000-file simulated source tree, a one-file drift mutation, and structured benchmark JSON output.
