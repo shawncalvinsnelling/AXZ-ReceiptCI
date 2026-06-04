@@ -1,0 +1,24 @@
+{
+  "schema_version": "axz.receiptci.v1",
+  "project_name": "ExampleProject",
+  "truth_label": "CERTIFIED_BUILD_RECEIPT_ENGINE_V0",
+  "status": "CERTIFIED_REPRODUCIBLE_PASS",
+  "generated_at_utc": "2026-06-04T00:00:00+00:00",
+  "platform": "Linux-example",
+  "python_version": "3.11.0",
+  "test_command": "python -m pytest -q",
+  "test_exit_code": 0,
+  "file_count": 2,
+  "total_bytes": 1234,
+  "source_tree_hash": "example_source_tree_hash_replace_with_real_sha256",
+  "artifact_hashes": [],
+  "certificate_hash": "example_certificate_hash_replace_with_real_sha256",
+  "receipt_text_hash": "example_receipt_text_hash_replace_with_real_sha256",
+  "files": [
+    {
+      "path": "src/example.py",
+      "bytes": 321,
+      "sha256": "example_file_hash_replace_with_real_sha256"
+    }
+  ]
+}

@@ -195,3 +195,52 @@ A safe public description:
 ```text
 AXZ ReceiptCI is an open-source deterministic CI receipt engine that verifies tests, hashes project files and artifacts, and emits reproducible JSON release certificates.
 ```
+
+## Implement AXZ-ReceiptCI in 3 minutes
+
+After `v1.1.0`, other repositories can call the reusable provenance workflow directly.
+Create `.github/workflows/verify.yml` in the target repository:
+
+```yaml
+name: Security Pipeline Audit
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  run_receipt_engine:
+    uses: shawncalvinsnelling/AXZ-ReceiptCI/.github/workflows/receipt_engine.yml@v1.1.0
+    with:
+      project_name: ${{ github.event.repository.name }}
+      root_dir: "."
+      test_cmd: "python -m pytest -q"
+      out_dir: "certificates"
+      enable_drift_check: true
+```
+
+The called workflow emits deterministic receipt outputs:
+
+```text
+certificates/certificate.json
+certificates/receipt.txt
+certificates/SHA256SUMS.txt
+```
+
+For non-Python projects, change `test_cmd` to the project verifier command, for example `npm test`, `go test ./...`, or `cargo test`.
+
+## v1.1 provenance pack
+
+AXZ ReceiptCI v1.1 adds a reusable workflow layer and documentation pack:
+
+- `.github/workflows/receipt_engine.yml` reusable workflow
+- `ROADMAP.md` five-phase system roadmap
+- `CONTRIBUTING.md` engineering contribution rules
+- `SECURITY.md` vulnerability and claim-safety policy
+- `docs/PROVENANCE_WORKFLOW_PACK.md` integration guide
+- `docs/RECEIPT_SCHEMA.md` receipt field reference
+- `examples/use_receipt_engine.yml` copyable caller workflow
+- `examples/sample_axz_receipt.json` sample receipt payload
+
+State-of-the-art posture remains truth bounded: AXZ ReceiptCI produces deterministic build receipts and provenance-style records. It does not replace SLSA, Sigstore, GitHub Artifact Attestations, Bazel, Nix, or enterprise CI systems.
+

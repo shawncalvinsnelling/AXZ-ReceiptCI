@@ -1,11 +1,27 @@
 {
   "schema_version": "axz.receiptci.v1",
+  "package_version": "1.1.0",
+  "truth_label": "CERTIFIED_BUILD_RECEIPT_ENGINE_V0",
   "required_fields": [
+    "schema_version",
     "project_name",
     "truth_label",
     "status",
+    "generated_at_utc",
+    "test_command",
+    "test_exit_code",
     "source_tree_hash",
     "certificate_hash",
+    "receipt_text_hash",
     "files"
+  ],
+  "v1_1_additions": [
+    "reusable GitHub Actions provenance workflow",
+    "three-minute integration template",
+    "ROADMAP.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "receipt schema documentation",
+    "sample receipt payload"
   ]
 }

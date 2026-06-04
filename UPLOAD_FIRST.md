@@ -35,3 +35,21 @@ If GitHub misses hidden files, use:
 VISIBLE_GITHUB_ACTIONS_verify.yml
 VISIBLE_GITIGNORE.txt
 ```
+
+## v1.1.0 patch upload notes
+
+For the v1.1.0 provenance pack, ensure these files are present after upload:
+
+```text
+.github/workflows/receipt_engine.yml
+ROADMAP.md
+CONTRIBUTING.md
+SECURITY.md
+docs/PROVENANCE_WORKFLOW_PACK.md
+docs/RECEIPT_SCHEMA.md
+docs/RELEASE_NOTES_v1.1.0.md
+examples/use_receipt_engine.yml
+examples/sample_axz_receipt.json
+```
+
+If GitHub's browser uploader does not preserve hidden workflow files, create `.github/workflows/receipt_engine.yml` manually using `VISIBLE_GITHUB_ACTIONS_receipt_engine.yml`.

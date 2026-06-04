@@ -1,8 +1,13 @@
 {
   "artifact_hashes": [],
-  "certificate_hash": "03ef04b3171a5462c6f8c9778bc3ee6cb2bc4c06a6bb48d0e691394c2fa64496",
-  "file_count": 28,
+  "certificate_hash": "9be0a73145799552121b94ec854116d961d2e486e621f1492b1459ff3205bb57",
+  "file_count": 44,
   "files": [
+    {
+      "bytes": 4193,
+      "path": ".github/workflows/receipt_engine.yml",
+      "sha256": "176b7b7cbb2f406918a3d62e2a394729e1260abb1e9865af2bf5e6388aeb56ff"
+    },
     {
       "bytes": 899,
       "path": ".github/workflows/verify.yml",
@@ -17,6 +22,11 @@
       "bytes": 376,
       "path": "CITATION.cff",
       "sha256": "2c6400c3bc3f3f485bad347ad4a4d55fc05b9d4c8cbf027fc1425f16e60f23cf"
+    },
+    {
+      "bytes": 1485,
+      "path": "CONTRIBUTING.md",
+      "sha256": "7c28923933af7d212db25933711fdf81ccb2e4270b37a1acceb6f43e36feebc1"
     },
     {
       "bytes": 1078,
@@ -34,14 +44,29 @@
       "sha256": "50f2a3ac426892cc2ae6bfba6f4eb9375926208f9dec8b6cf78c67d63ece7c58"
     },
     {
-      "bytes": 4621,
+      "bytes": 6246,
       "path": "README.md",
-      "sha256": "415bd73e41f4d7dc8ef9ea82df75a36ac372e3fd89aef110f90b50756232b68a"
+      "sha256": "ebce84876d32edfa2b7043d1b76c982fd951792403992c55bde25d23a8d41a9b"
     },
     {
-      "bytes": 551,
+      "bytes": 1672,
+      "path": "ROADMAP.md",
+      "sha256": "c2c33e2d1708ec6a5e2b18f8e5fd5d1ea4f5972e5aa41c71c603fffeb4807c03"
+    },
+    {
+      "bytes": 1091,
+      "path": "SECURITY.md",
+      "sha256": "9840105325f924b1bc4beeb5a66a8990949064f94f64fed53560e027c4536609"
+    },
+    {
+      "bytes": 1075,
       "path": "UPLOAD_FIRST.md",
-      "sha256": "62038a8e1a7ea6490d49562a69b3f63886a345bdc1ab7cd6fe1044196d574ec9"
+      "sha256": "eb0e1dce2381da668b3e3fb47193c853dd4df5620a175c877aaf05874e805048"
+    },
+    {
+      "bytes": 4193,
+      "path": "VISIBLE_GITHUB_ACTIONS_receipt_engine.yml",
+      "sha256": "176b7b7cbb2f406918a3d62e2a394729e1260abb1e9865af2bf5e6388aeb56ff"
     },
     {
       "bytes": 899,
@@ -54,9 +79,9 @@
       "sha256": "f822251c20546aedae84d828c86837a46449cf62474d5c880d41f45c9c6dfff1"
     },
     {
-      "bytes": 184,
+      "bytes": 625,
       "path": "data/receipt_schema_summary.json",
-      "sha256": "eaa6239d2b0f7cbec41cd1aa13e25186cb0e2dd58b29deeae154992908f79f21"
+      "sha256": "40e76c4c91d02be08bd8018f27269ab4cbf648d25999576e75a1b8b74a7d089a"
     },
     {
       "bytes": 549,
@@ -74,9 +99,24 @@
       "sha256": "f1a50c08efa7e0bdf7e38cd500df4d8921e0e03c07f07098b92270d48e4dee5e"
     },
     {
+      "bytes": 1139,
+      "path": "docs/PROVENANCE_WORKFLOW_PACK.md",
+      "sha256": "025eed14d245b0d11756859d8ac314ad9f452f3240e5c1a275e5b833ffc5a3fd"
+    },
+    {
+      "bytes": 1375,
+      "path": "docs/RECEIPT_SCHEMA.md",
+      "sha256": "112c64723d3c59de54af85940e01a430e74b47199bc894f0b5887acb70c14e3b"
+    },
+    {
       "bytes": 730,
       "path": "docs/RELEASE_NOTES_v1.0.0.md",
       "sha256": "c2a5712ee69e7b988a4c2b2352036d4dd359c718c9017f472eea80e633e102b3"
+    },
+    {
+      "bytes": 678,
+      "path": "docs/RELEASE_NOTES_v1.1.0.md",
+      "sha256": "e27913f51fa48c6e98a5d6712c7ac63b31377fd899aa468913c55cf11f6edc24"
     },
     {
       "bytes": 598,
@@ -99,9 +139,19 @@
       "sha256": "547cdf1c036a88688bf848ec984e4d176e13ec1477351000863478dc8c8e09d3"
     },
     {
+      "bytes": 789,
+      "path": "examples/sample_axz_receipt.json",
+      "sha256": "e18948d402c5fdb14ff45d373824cf5188f1b964768fc7648595cbddd0a2374d"
+    },
+    {
+      "bytes": 361,
+      "path": "examples/use_receipt_engine.yml",
+      "sha256": "e6d678292cc673115d516b2d8434eb8128a0c6c9a9dca5a8a001b3a17a5fb33c"
+    },
+    {
       "bytes": 739,
       "path": "pyproject.toml",
-      "sha256": "c54e0860a473e90163715d425bb9bc26bce288f1353837fe9d4b2c5a0ad494b8"
+      "sha256": "c9d3a0db46da266a62192d33988b5447da3c54263f67e534ac4a9f6eb34c2963"
     },
     {
       "bytes": 12,
@@ -114,9 +164,34 @@
       "sha256": "85d1b3764a40ce2684421cfb31efa39c6d2e56b8d3377aff909ba46776a715b2"
     },
     {
+      "bytes": 6803,
+      "path": "src/axz_receiptci.egg-info/PKG-INFO",
+      "sha256": "74fa54c54b91d6eab2f2f8f433ffb8d2d42e2d7a36b7612654a8577f5cbd715e"
+    },
+    {
+      "bytes": 425,
+      "path": "src/axz_receiptci.egg-info/SOURCES.txt",
+      "sha256": "e52a189603e6aecc5ddef46b379a8d3cfdd730c8329ab07d0b7461f806206409"
+    },
+    {
+      "bytes": 1,
+      "path": "src/axz_receiptci.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "bytes": 57,
+      "path": "src/axz_receiptci.egg-info/entry_points.txt",
+      "sha256": "4232f3b31a4d6242838c4e98b347c2606c3e8477e0ad226bfc4238e8deff6679"
+    },
+    {
+      "bytes": 14,
+      "path": "src/axz_receiptci.egg-info/top_level.txt",
+      "sha256": "6ad7a3d3f69e0a074c2362c301c6d57f90c4c8095224c71ac8fa8519c5de29da"
+    },
+    {
       "bytes": 44,
       "path": "src/axz_receiptci/__init__.py",
-      "sha256": "e8c194c11a2fb1ad4235cb0e6be8ad979bfd7d841653a818643c1171bb347c6a"
+      "sha256": "c2a8a07f8c890fc82b45ad1d055c775d6a66a173b8938ea6856ce68913f523ef"
     },
     {
       "bytes": 2631,
@@ -142,9 +217,14 @@
       "bytes": 1492,
       "path": "tests/test_core.py",
       "sha256": "efcf41ff5e239d6ec2a3aa329ec9dcbd198b3d8a11ae0b9ffc8f91154fe6c691"
+    },
+    {
+      "bytes": 1023,
+      "path": "tests/test_v11_provenance_pack.py",
+      "sha256": "8792e1e2d58ab260ae97c98695cc49fc928bd0c0208a746c813d18c81fedc409"
     }
   ],
-  "generated_at_utc": "2026-06-04T16:12:42+00:00",
+  "generated_at_utc": "2026-06-04T18:08:10+00:00",
   "ignore_policy": [
     ".git",
     ".hg",
@@ -166,17 +246,17 @@
   "project_name": "AXZ-ReceiptCI",
   "python_implementation": "CPython",
   "python_version": "3.13.5",
-  "receipt_text_hash": "64b8049d1e179c2e999a1bcb70175300e3b28870ad1ce4dcbbd6adc3f431532b",
+  "receipt_text_hash": "8171a045197d805c5589da2704fbd06a941b9a074c32e155771dac2aaa4a01cd",
   "schema_version": "axz.receiptci.v1",
-  "source_tree_hash": "c73757862b05d984976a9ab0376b510180aacd9d93acdade4f5aca47089bc1d2",
+  "source_tree_hash": "ff9f714dab41f400c2ed4811c1db7bdbc04e5a8ba89edeffa39d7f43784ec61c",
   "status": "CERTIFIED_REPRODUCIBLE_PASS",
   "stderr_tail": "",
-  "stdout_tail": ".......                                                                  [100%]\n7 passed in 4.59s\n",
+  "stdout_tail": "..........                                                               [100%]\n10 passed in 9.34s\n",
   "test_command": "python -m pytest -q",
-  "test_duration_seconds": 8.281539,
+  "test_duration_seconds": 16.693193,
   "test_exit_code": 0,
   "test_status": "PASS",
-  "total_bytes": 31041,
+  "total_bytes": 58930,
   "truth_label": "CERTIFIED_BUILD_RECEIPT_ENGINE_V0",
   "working_directory_name": "AXZ-ReceiptCI"
 }

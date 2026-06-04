@@ -1,0 +1,15 @@
+name: Security Pipeline Audit
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  run_receipt_engine:
+    uses: shawncalvinsnelling/AXZ-ReceiptCI/.github/workflows/receipt_engine.yml@v1.1.0
+    with:
+      project_name: ${{ github.event.repository.name }}
+      root_dir: "."
+      test_cmd: "python -m pytest -q"
+      out_dir: "certificates"
+      enable_drift_check: true

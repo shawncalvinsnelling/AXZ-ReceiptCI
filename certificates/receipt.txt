@@ -2,10 +2,10 @@ AXZ ReceiptCI Verification Receipt
 project_name: AXZ-ReceiptCI
 truth_label: CERTIFIED_BUILD_RECEIPT_ENGINE_V0
 status: CERTIFIED_REPRODUCIBLE_PASS
-generated_at_utc: 2026-06-04T16:12:42+00:00
+generated_at_utc: 2026-06-04T18:08:10+00:00
 test_command: python -m pytest -q
 test_exit_code: 0
-file_count: 28
-total_bytes: 31041
-source_tree_hash: c73757862b05d984976a9ab0376b510180aacd9d93acdade4f5aca47089bc1d2
-certificate_hash: 03ef04b3171a5462c6f8c9778bc3ee6cb2bc4c06a6bb48d0e691394c2fa64496
+file_count: 44
+total_bytes: 58930
+source_tree_hash: ff9f714dab41f400c2ed4811c1db7bdbc04e5a8ba89edeffa39d7f43784ec61c
+certificate_hash: 9be0a73145799552121b94ec854116d961d2e486e621f1492b1459ff3205bb57

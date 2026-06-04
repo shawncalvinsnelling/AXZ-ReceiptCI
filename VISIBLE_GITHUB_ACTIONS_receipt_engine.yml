@@ -1,0 +1,114 @@
+name: AXZ-ReceiptCI Provenance Engine
+
+on:
+  workflow_call:
+    inputs:
+      project_name:
+        description: "Project name to record in the AXZ receipt."
+        required: false
+        default: "AXZ-ReceiptCI-Target"
+        type: string
+      root_dir:
+        description: "Project root directory to scan."
+        required: false
+        default: "."
+        type: string
+      test_cmd:
+        description: "Verification command to run before issuing the receipt."
+        required: false
+        default: "python -m pytest -q"
+        type: string
+      out_dir:
+        description: "Directory where AXZ ReceiptCI writes certificate outputs."
+        required: false
+        default: "certificates"
+        type: string
+      receiptci_repo:
+        description: "Repository containing the AXZ ReceiptCI package."
+        required: false
+        default: "shawncalvinsnelling/AXZ-ReceiptCI"
+        type: string
+      receiptci_ref:
+        description: "Git ref or tag for installing AXZ ReceiptCI."
+        required: false
+        default: "v1.1.0"
+        type: string
+      enable_drift_check:
+        description: "Emit a localized changed-file report for pull requests."
+        required: false
+        default: true
+        type: boolean
+    outputs:
+      source_tree_hash:
+        description: "The deterministic source-tree SHA-256 hash recorded by AXZ ReceiptCI."
+        value: "${{ jobs.generate_receipt.outputs.source_tree_hash }}"
+      certificate_hash:
+        description: "The AXZ certificate hash recorded in certificate.json."
+        value: "${{ jobs.generate_receipt.outputs.certificate_hash }}"
+      status:
+        description: "AXZ ReceiptCI receipt status."
+        value: "${{ jobs.generate_receipt.outputs.status }}"
+
+jobs:
+  generate_receipt:
+    name: Generate AXZ provenance receipt
+    runs-on: ubuntu-latest
+    outputs:
+      source_tree_hash: "${{ steps.parse_receipt.outputs.source_tree_hash }}"
+      certificate_hash: "${{ steps.parse_receipt.outputs.certificate_hash }}"
+      status: "${{ steps.parse_receipt.outputs.status }}"
+    steps:
+      - name: Check out caller repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install AXZ ReceiptCI
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "git+https://github.com/${{ inputs.receiptci_repo }}.git@${{ inputs.receiptci_ref }}"
+
+      - name: Generate deterministic receipt
+        run: |
+          axz-receiptci verify             --root "${{ inputs.root_dir }}"             --project-name "${{ inputs.project_name }}"             --test-cmd "${{ inputs.test_cmd }}"             --out "${{ inputs.out_dir }}"
+
+      - name: Check deterministic receipt
+        run: axz-receiptci check "${{ inputs.out_dir }}/certificate.json" --root "${{ inputs.root_dir }}"
+
+      - name: Parse receipt outputs
+        id: parse_receipt
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path
+          cert = json.loads(Path("${{ inputs.out_dir }}/certificate.json").read_text(encoding="utf-8"))
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"source_tree_hash={cert['source_tree_hash']}
+")
+              out.write(f"certificate_hash={cert['certificate_hash']}
+")
+              out.write(f"status={cert['status']}
+")
+
+      - name: Localized drift report for pull requests
+        if: ${{ inputs.enable_drift_check && github.event_name == 'pull_request' }}
+        run: |
+          echo "[AXZ-ReceiptCI] Pull request drift report"
+          git diff --name-only HEAD^ HEAD | tee axz_modified_files.txt
+
+      - name: Archive AXZ provenance artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: axz-receiptci-provenance
+          path: |
+            ${{ inputs.out_dir }}/certificate.json
+            ${{ inputs.out_dir }}/receipt.txt
+            ${{ inputs.out_dir }}/SHA256SUMS.txt
+            axz_modified_files.txt
+          if-no-files-found: ignore
