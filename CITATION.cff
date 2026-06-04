@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "AXZ ReceiptCI"
+message: "If you use AXZ ReceiptCI, please cite this repository."
+type: software
+authors:
+  - family-names: Snelling
+    given-names: Shawn Calvin
+license: MIT
+version: 1.0.0
+date-released: 2026-06-04
+abstract: "Deterministic CI receipt engine that verifies tests, hashes artifacts, and emits reproducible JSON release certificates."

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axz-receiptci"
+version = "1.0.0"
+description = "Deterministic CI receipt engine that verifies tests, hashes artifacts, and emits reproducible JSON release certificates."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Shawn Calvin Snelling"}]
+keywords = ["ci", "receipt", "sha256", "provenance", "deterministic", "build", "verification"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.scripts]
+axz-receiptci = "axz_receiptci.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

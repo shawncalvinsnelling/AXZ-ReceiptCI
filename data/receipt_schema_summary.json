@@ -1,0 +1,11 @@
+{
+  "schema_version": "axz.receiptci.v1",
+  "required_fields": [
+    "project_name",
+    "truth_label",
+    "status",
+    "source_tree_hash",
+    "certificate_hash",
+    "files"
+  ]
+}
