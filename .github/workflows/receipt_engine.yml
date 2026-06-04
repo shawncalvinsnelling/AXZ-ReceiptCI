@@ -31,7 +31,7 @@ on:
       receiptci_ref:
         description: "Git ref or tag for installing AXZ ReceiptCI."
         required: false
-        default: "v1.1.0"
+        default: "v1.2.0"
         type: string
       enable_drift_check:
         description: "Emit a localized changed-file report for pull requests."
